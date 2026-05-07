@@ -3,159 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI cho cuộc sống xanh
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"></title>
+    <title>AI Cho Cuộc Sống Xanh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-      <style>
-    /* 1. Thiết lập nền và font chữ chung */
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #e8f5e9; /* Xanh lá cây nhạt */
-        font-family: 'Roboto', sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100vh;
-    }
+        /* 1. CĂN CHỈNH TOÀN BỘ TRANG */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9; /* Nền xanh lá cây nhạt */
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Căn giữa mọi thứ theo chiều ngang */
+            min-height: 100vh;
+        }
 
-    /* 2. Thanh tác vụ nhỏ bên trên */
-    .top-bar {
-        font-size: 14px;
-        color: #2e7d32;
-        margin-top: 20px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+        /* 2. THANH TÁC VỤ NHỎ */
+        .top-bar {
+            font-size: 14px;
+            color: #2e7d32;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-    /* 3. Tiêu đề chính */
-    .main-title {
-        font-family: 'Noto Serif Display', serif;
-        font-size: 48px;
-        margin: 10px 0 30px 0;
-        color: #000; /* "AI cho" màu đen */
-    }
-    .main-title span {
-        color: #4caf50; /* "cuộc sống xanh" màu xanh lá */
-    }
+        /* 3. TIÊU ĐỀ CHÍNH */
+        .main-title {
+            font-family: 'Noto Serif Display', serif;
+            font-size: 48px;
+            margin: 10px 0 30px 0;
+            color: #000;
+            text-align: center;
+        }
+        .main-title span {
+            color: #4caf50; /* Chữ cuộc sống xanh màu xanh lá */
+        }
 
-    /* 4. Khung bao màu Beige chứa nội dung chính */
-    .app-container {
-        background-color: #f5f5dc; /* Màu Beige */
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 600px;
-        width: 90%;
-        border: 2px solid #dcdcaa;
-    }
+        /* 4. KHUNG BAO MÀU BEIGE */
+        .app-container {
+            background-color: #f5f5dc; /* Màu Beige */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px; /* Tăng độ rộng để chứa 2 cột */
+            width: 90%;
+            border: 2px solid #dcdcaa;
+        }
 
-    /* Khung hiển thị Webcam */
-    #webcam-container {
-        border: 8px solid #fff;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        background: #000;
-        margin-bottom: 20px;
-        width: 320px;
-        height: 320px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        /* KHUNG CAMERA */
+        #webcam-container {
+            border: 8px solid #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background: #000;
+            margin-bottom: 25px;
+            width: 320px;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    /* Nút bấm */
-    button {
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        padding: 12px 30px;
-        font-size: 18px;
-        font-weight: bold;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-bottom: 25px;
-    }
-    button:hover {
-        background-color: #388e3c;
-        transform: scale(1.05);
-    }
+        /* NÚT BẤM */
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        button:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
 
-    /* 5. Khu vực hiển thị kết quả */
-    #label-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    #label-container div {
-        background: rgba(255, 255, 255, 0.6);
-        padding: 12px 20px;
-        border-radius: 8px;
-        border: 1px solid #e0e0ce;
-        display: flex;
-        justify-content: space-between;
-        font-size: 18px;
-        transition: all 0.2s;
-    }
+        /* 5. CHIA 2 CỘT CHO KẾT QUẢ (MỖI CỘT 3 CÁI) */
+        #label-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Chia 2 cột đều nhau */
+            gap: 15px; /* Khoảng cách giữa các ô */
+        }
 
-    /* HIỆU ỨNG IN ĐẬM KHI > 60% */
-    .high-confidence {
-        background-color: #ffffff !important;
-        border: 2px solid #4caf50 !important;
-        font-weight: bold !important; /* In đậm nội dung */
-        color: #1b5e20;
-        transform: scale(1.02);
-    }
+        #label-container div {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 1px solid #e0e0ce;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
 
-    /* 6. Chân trang */
-    .footer-link {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        font-size: 16px;
-        color: #555;
-    }
-    .footer-link a {
-        color: #2e7d32;
-        text-decoration: none;
-        font-weight: bold;
-        border-bottom: 2px solid #4caf50;
-    }
-</style>
+        /* HIỆU ỨNG IN ĐẬM KHI ĐỘ CHÍNH XÁC > 60% */
+        .high-confidence {
+            background-color: #ffffff !important;
+            border: 2px solid #4caf50 !important;
+            font-weight: bold !important; /* IN ĐẬM */
+            color: #1b5e20;
+            transform: scale(1.05);
+        }
+
+        /* 6. CHÂN TRANG */
+        .footer-link {
+            margin: 30px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .footer-link a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid #4caf50;
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">PHÂN LOẠI RÁC THẢI - IMAGE MODEL</div>
+    <div class="top-bar">Phân loại rác thải tự động</div>
+    
+    <h1 class="main-title">AI cho <span>cuộc sống xanh</span></h1>
 
-    <div class="web-description">
-        <p>Ứng dụng sử dụng trí tuệ nhân tạo (CNN) để nhận diện và phân loại rác thải sinh hoạt trong thời gian thực. Hãy đưa rác lại gần camera để bắt đầu.</p>
+    <div class="app-container">
+        <div id="webcam-container">
+            <span style="color: #666;">Camera chưa sẵn sàng</span>
+        </div>
+
+        <button type="button" onclick="init()">Bắt đầu nhận diện</button>
+        
+        <div id="label-container">
+            </div>
     </div>
 
-    <div class="container">
-        <div id="webcam-container">
-            <span style="color: #fff;">Camera sẽ hiện tại đây</span>
-        </div>
-        
-        <button type="button" onclick="init()">Bắt đầu nhận diện</button>
-
-        <div id="label-container" class="label-container">
-            </div>
-
-        <div class="footer-guide">
-            <p>Để xử lý rác đúng cách, bạn có thể tham khảo <a href="LINK_HUONG_DAN_CUA_BAN" target="_blank">tại đây</a>.</p>
-        </div>
+    <div class="footer-link">
+        Tham khảo cách xử lý rác <a href="https://canva.link/vjjnoiq5v52rytr" target="_blank">tại đây</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
     <script type="text/javascript">
+        // LINK MODEL CỦA M
         const URL = "https://teachablemachine.withgoogle.com/models/KfJ6e8utrB/";
 
         let model, webcam, labelContainer, maxPredictions;
@@ -173,22 +173,19 @@
             await webcam.play();
             window.requestAnimationFrame(loop);
 
-            // Xóa chữ chờ và hiện camera
+            // Hiện webcam vào khung
             document.getElementById("webcam-container").innerHTML = "";
             document.getElementById("webcam-container").appendChild(webcam.canvas);
             
             labelContainer = document.getElementById("label-container");
-            labelContainer.innerHTML = ""; // Xóa trắng trước khi hiện mới
+            labelContainer.innerHTML = ""; 
             for (let i = 0; i < maxPredictions; i++) {
-                let div = document.createElement("div");
-                div.className = "label-item";
-                div.innerHTML = `<span class="label-name"></span><span class="label-value">0.00</span>`;
-                labelContainer.appendChild(div);
+                labelContainer.appendChild(document.createElement("div"));
             }
         }
 
         async function loop() {
-            webcam.update();
+            webcam.update(); 
             await predict();
             window.requestAnimationFrame(loop);
         }
@@ -196,20 +193,17 @@
         async function predict() {
             const prediction = await model.predict(webcam.canvas);
             for (let i = 0; i < maxPredictions; i++) {
-                const classPrediction = prediction[i].className;
-                const probability = prediction[i].probability.toFixed(2);
+                const probability = prediction[i].probability;
+                const classText = `<span>${prediction[i].className}</span> <span>${(probability * 100).toFixed(0)}%</span>`;
                 
-                const item = labelContainer.childNodes[i];
-                item.querySelector(".label-name").innerText = classPrediction;
-                item.querySelector(".label-value").innerText = probability;
+                const element = labelContainer.childNodes[i];
+                element.innerHTML = classText;
 
-                // Highlight kết quả chính xác cao
+                // Tự động in đậm và đổi màu nếu > 60%
                 if (probability > 0.6) {
-                    item.style.backgroundColor = "#e8f0fe";
-                    item.style.borderColor = "#3f51b5";
+                    element.classList.add("high-confidence");
                 } else {
-                    item.style.backgroundColor = "#f8f9fa";
-                    item.style.borderColor = "#ddd";
+                    element.classList.remove("high-confidence");
                 }
             }
         }
